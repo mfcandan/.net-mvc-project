@@ -1,4 +1,4 @@
-﻿
+﻿@model WebApplication1.ViewModels.DepartmanDetayViewModel
 @{
     Layout = null;
 }
@@ -11,8 +11,14 @@
     <title>Detay</title>
 </head>
 <body>
-    <div> 
-        <h1>View Datadan gelen id: @ViewData["departmanId"]</h1>
-    </div>
+    <h3>Departman Detay Sayfası</h3>
+    <h4>ID: @Model.Departman.Id - @Model.Departman.Ad</h4>
+    <ul>
+        @foreach (var personel in Model.Personeller)
+        {
+            <li>@personel.Ad</li>
+        }
+        
+    </ul>
 </body>
 </html>
