@@ -9,24 +9,10 @@ namespace WebApplication1.Controllers
 {
     public class DepartmanController : Controller
     {
-        public ActionResult Merhaba()
+        public ActionResult Detay(int id)
         {
-            var departman = new Departman() {Id=1, Ad="Bilgi İşlem" };
-            return View(departman);
-        }
-
-        public ActionResult Test()
-        {
-            return RedirectToAction("Index", "Personel", new { SortBy="maas"});
-        }
-
-        public ActionResult Sil(int departmanId)
-        {
-            return Content("Gelen Id:" + departmanId);
-        }
-        public ActionResult Update(int departmanId, string ad)
-        {
-            return Content("Did:"+departmanId+" "+" Ad:"+ad);
+            ViewData["departmanId"] = id;
+            return View();
         }
     }
 }

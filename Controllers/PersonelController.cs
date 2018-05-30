@@ -14,10 +14,5 @@ namespace WebApplication1.Controllers
             return Content("Personel Anasayfa");
         }
 
-        [Route("personel/liste/{siralama}/{sayfa}")]
-        public ActionResult PersonelListesi(string siralama, int sayfa)
-        {
-            return Content(siralama+" "+sayfa);
-        }
     }
 }
